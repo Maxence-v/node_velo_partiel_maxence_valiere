@@ -16,9 +16,9 @@ const bikeSchema = new mongoose.Schema({
     },
     accessories: {
         type: [String],
-        required: function() {return this > 1},
+        required: true,
         enum: ['front basket', 'back basket', 'rear view mirror', 'flowers', 'premium tires', 'bell', 'bag', 'pump'],
-
+        minItems: 1
     },
     stock: {
         type: Number,
